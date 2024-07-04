@@ -4,6 +4,9 @@ plugins {
     id("com.google.gms.google-services") version "4.4.2" apply false
     id("kotlin-parcelize")
     id("kotlin-kapt")
+
+//    kotlin("android")
+//    kotlin("android.extensions")
 }
 
 
@@ -28,6 +31,10 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+        }
+        getByName("release") {
+            isMinifyEnabled = false
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
     compileOptions {
@@ -130,5 +137,10 @@ dependencies {
 
     implementation ("com.navercorp.nid:oauth:5.1.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0")
+
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.5.21")
+    implementation("androidx.appcompat:appcompat:1.2.0")
+    implementation("com.google.android.material:material:1.2.1")
+    implementation("androidx.constraintlayout:constraintlayout:2.0.4")
 
 }
