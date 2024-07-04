@@ -23,7 +23,7 @@ dependencyResolutionManagement {
     //maven(url="https://naver.jfrog.io/artifactory/maven/")
     }
 }
-
+ 
 rootProject.name = "tab3"
 include(":app")
  
