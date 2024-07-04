@@ -17,7 +17,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         // 카카오 SDK 초기화
-        KakaoSdk.init(this, "YOUR_KAKAO_APP_KEY")
+        KakaoSdk.init(this, "bcde670c93a2b96ce96a58214d188a99")//"YOUR_KAKAO_APP_KEY")
 
         val kakaoLoginButton: Button = findViewById(R.id.kakaoLoginButton)
         kakaoLoginButton.setOnClickListener {
