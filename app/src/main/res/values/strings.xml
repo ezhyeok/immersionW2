@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Spoon</string>
+    <string name="title_home">연락처</string>
+    <string name="title_dashboard">갤러리</string>
+    <string name="title_notifications">일기</string>
+    <string name="nodiary">(기록 없음)</string>
+    <string name="delete_diary">Delete diary entry</string>
+    <string name="no_result_text">검색 결과가 없습니다</string>
+    <string name="menu_title_text">대표 메뉴</string>
+</resources>

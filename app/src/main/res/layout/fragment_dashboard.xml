@@ -1,0 +1,128 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- 첫 번째 레이아웃 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:id="@+id/imageEditLayout">
+
+        <!-- RelativeLayout to overlay the PhotoView and ImageButtons -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- 오른쪽 상단에 X 이미지를 추가하여 닫기 기능 구현 -->
+            <ImageButton
+                android:id="@+id/closeButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/close_button"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:focusable="true" />
+        </RelativeLayout>
+
+        <!-- 중간 부분: 스크롤이 가능한 레이아웃 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!-- PhotoView로 변경 -->
+            <com.github.chrisbanes.photoview.PhotoView
+                android:id="@+id/dialog_photo_view"
+                android:layout_width="match_parent"
+                android:layout_height="354dp"
+                android:scaleType="fitCenter" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- 두 번째 레이아웃 -->
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:visibility="visible"
+        android:id="@+id/originLayout">
+
+        <ImageButton
+            android:id="@+id/deleteButton"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/circular_delete_button"
+            android:background="@drawable/circular_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="70dp"
+            android:layout_marginStart="20dp"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/editButton"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/circular_zoom_button"
+            android:background="@drawable/circular_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="70dp"
+            android:layout_marginEnd="20dp"
+            android:visibility="gone"
+            />
+
+        <ImageButton
+            android:id="@+id/cameraButton"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/circular_cam_button"
+            android:background="@drawable/circular_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="70dp"
+            android:layout_marginStart="20dp"
+            android:visibility="visible"
+            />
+        <ImageButton
+            android:id="@+id/loadImageButton"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/circular_add_button"
+            android:background="@drawable/circular_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="70dp"
+            android:layout_marginEnd="20dp"
+            android:visibility="visible"
+            />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/imageRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="140dp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+    <LinearLayout android:id="@+id/bottomSheetLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="470dp"
+        android:background="@drawable/background_bottomsheet"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="220dp"
+        android:orientation="vertical"
+        android:elevation="10dp"
+        android:padding="10dp"
+        android:clickable="true"
+        android:focusable="true"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/map_fragment2"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:name="com.naver.maps.map.MapFragment" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginStart="15sp"
+            android:layout_marginBottom="10sp"
+            android:layout_marginEnd="15sp"
+            android:layout_marginTop="20sp">
+
+            <ImageButton
+                android:id="@+id/diaryimg2"
+                android:layout_width="150dp"
+                android:layout_height="200dp"
+                android:background="@drawable/diaryimage"
+                android:clipToOutline="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/blankimg" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/diaryQuestion2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/madlogfont_bold"
+                    android:text="맛집 한 줄 소개"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/diaryContent2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0sp"
+                    android:layout_marginTop="10sp"
+                    android:fontFamily="@font/madlogfont_regular"
+                    android:text="@string/nodiary"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

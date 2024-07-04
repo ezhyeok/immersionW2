@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp">
+
+    <!-- Your existing layout goes here -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="16dp">
+        <ImageView
+            android:id="@+id/profile2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_person_02"
+            android:clipToOutline="true"
+            android:clickable="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/profile1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_person_01"
+            android:clipToOutline="true"
+            android:clickable="true"
+            app:layout_constraintEnd_toStartOf="@id/profile2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/profile3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_person_03"
+            android:clipToOutline="true"
+            android:clickable="true"
+            app:layout_constraintStart_toEndOf="@id/profile2"
+            app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/profile5"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_person_05"
+            android:clipToOutline="true"
+            android:clickable="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profile2"  />
+        <ImageView
+            android:id="@+id/profile4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_person_04"
+            android:clipToOutline="true"
+            android:clickable="true"
+            app:layout_constraintEnd_toStartOf="@id/profile5"
+            app:layout_constraintTop_toBottomOf="@id/profile1" />
+
+        <ImageView
+            android:id="@+id/profile6"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_person_06"
+            android:clipToOutline="true"
+            android:clickable="true"
+            app:layout_constraintStart_toEndOf="@id/profile5"
+            app:layout_constraintTop_toBottomOf="@id/profile3"  />
+        <ImageView
+            android:id="@+id/profile8"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_person_08"
+            android:clipToOutline="true"
+            android:clickable="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profile5"  />
+        <ImageView
+            android:id="@+id/profile7"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_person_07"
+            android:clipToOutline="true"
+            android:clickable="true"
+            app:layout_constraintEnd_toStartOf="@id/profile8"
+            app:layout_constraintTop_toBottomOf="@id/profile4" />
+
+        <ImageView
+            android:id="@+id/profilePlus"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_question"
+            android:clipToOutline="true"
+            android:clickable="true"
+            app:layout_constraintStart_toEndOf="@id/profile8"
+            app:layout_constraintTop_toBottomOf="@id/profile6"  />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
