@@ -127,4 +127,8 @@ dependencies {
 
     // animation
     implementation("com.daimajia.androidanimations:library:2.4@aar")
+
+    implementation ("com.navercorp.nid:oauth:5.1.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0")
+
 }
