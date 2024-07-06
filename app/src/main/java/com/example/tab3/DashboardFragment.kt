@@ -14,6 +14,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import android.widget.Toast
 import com.bumptech.glide.request.RequestOptions
@@ -47,12 +48,11 @@ class DashboardFragment : Fragment(){
     private val REQUEST_CAMERA_PERMISSION = 100
     private lateinit var photoURI: Uri
     private lateinit var imageModel: DashboardViewModel
-    private lateinit var imageAdapter: ImageAdapter
+    private lateinit var imageModel2: DashboardViewModel
+    private lateinit var imageAdapter1: ImageAdapter
+    private lateinit var imageAdapter2: ImageAdapter
 
     private val imageLoadLauncher = registerForActivityResult(ActivityResultContracts.GetMultipleContents()) { uriList ->
-
-
-
         updateImages(uriList)
     }
 
@@ -61,7 +61,6 @@ class DashboardFragment : Fragment(){
         bitmap.compress(Bitmap.CompressFormat.JPEG,100,bytes)
         val path = MediaStore.Images.Media.insertImage(requireContext().contentResolver,bitmap,"File",null)
         return Uri.parse(path.toString())
-
     }
 
     override fun onCreateView(
@@ -70,6 +69,8 @@ class DashboardFragment : Fragment(){
     ): View {
 
         imageModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().application)).get(
+            DashboardViewModel::class.java)
+        imageModel2 = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().application)).get(
             DashboardViewModel::class.java)
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -101,12 +102,10 @@ class DashboardFragment : Fragment(){
                 }
                 Log.d("imageEdit", "detected ${x[_position]}")
             }
-
-
         }
 
         binding.deleteButton.setOnClickListener{
-            Log.d("currentList", "${imageAdapter.currentList}")
+            Log.d("currentList", "${imageAdapter1.currentList}")
             imageModel.deleteImage(_position)
             imageModel.loadImages()
             val images2 = imageModel.images.value?.map { ImageItems.Image(it) } ?: emptyList()
@@ -116,10 +115,11 @@ class DashboardFragment : Fragment(){
 
             if(images2.isEmpty()){
                 Log.d("currentList4", "detected")
-
-                imageAdapter.submitList(emptyMutableList)
+                imageAdapter1.submitList(emptyMutableList)
+                imageAdapter2.submitList(emptyMutableList)
             }else {
-                imageAdapter.submitList(images2)
+                imageAdapter1.submitList(images2)
+                imageAdapter2.submitList(images2)
             }
             toggleVisibility(binding.loadImageButton)
             toggleVisibility(binding.cameraButton)
@@ -131,44 +131,63 @@ class DashboardFragment : Fragment(){
             toggleEditMode()
         }
 
-        /*
-                binding.toFrameActivityButton.setOnClickListener {
-                    toFrameActivity()
-                }
-         */
-        initRecyclerView()
+        initRecyclerViews()
 
         return root
     }
 
-
-    private fun initRecyclerView() {
-        imageAdapter = ImageAdapter(object : ImageAdapter.ItemClickListener {
+    private fun initRecyclerViews() {
+        // 첫 번째 RecyclerView 초기화
+        imageAdapter1 = ImageAdapter(object : ImageAdapter.ItemClickListener {
             override fun onLoadMoreClick() {
                 checkPermission()
             }
-        },
-            object : ImageAdapter.ImageClickListener{
-                override fun onImageClick(position:Int) {
-                    toggleVisibility(binding.loadImageButton)
-                    toggleVisibility(binding.cameraButton)
-                    toggleVisibility(binding.deleteButton)
-                    toggleVisibility(binding.editButton)
-                    _position=position
-                }
-            })
-        Log.d("currentList", "${imageAdapter.currentList::class}")
+        }, object : ImageAdapter.ImageClickListener {
+            override fun onImageClick(position: Int) {
+                toggleVisibility(binding.loadImageButton)
+                toggleVisibility(binding.cameraButton)
+                toggleVisibility(binding.deleteButton)
+                toggleVisibility(binding.editButton)
+                _position = position
+            }
+        })
+        Log.d("currentList1", "${imageAdapter1.currentList::class}")
 
-        val images2 = imageModel.images.value?.map { ImageItems.Image(it) } ?: emptyList()
-        imageAdapter.submitList(images2)
+        val images1 = imageModel.images.value?.map { ImageItems.Image(it) } ?: emptyList()
+        imageAdapter1.submitList(images1)
 
-        //binding.imageRecyclerView.addItemDecoration()
-        binding.imageRecyclerView.apply {
-            adapter = imageAdapter
+        binding.recyclerView1.apply {
+            adapter = imageAdapter1
             layoutManager = GridLayoutManager(context, 3)
+        }
 
+        // 두 번째 RecyclerView 초기화
+        imageAdapter2 = ImageAdapter(object : ImageAdapter.ItemClickListener {
+            override fun onLoadMoreClick() {
+                // 두 번째 RecyclerView에는 Load More 버튼이 없음
+            }
+        }, object : ImageAdapter.ImageClickListener {
+            override fun onImageClick(position: Int) {
+                // 두 번째 RecyclerView에서의 클릭 동작
+            }
+        })
+        Log.d("currentList2", "${imageAdapter2.currentList::class}")
+
+        // 유효한 이미지 URL 목록으로 수정
+        val hardcodedImageUrls = mutableListOf(
+            "https://via.placeholder.com/150",
+            "https://via.placeholder.com/200",
+            "https://via.placeholder.com/250"
+        )
+        val hardcodedImages = hardcodedImageUrls.map { ImageItems.Image(Uri.parse(it)) }
+        imageAdapter2.submitList(hardcodedImages)
+
+        binding.recyclerView2.apply {
+            adapter = imageAdapter2
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         }
     }
+
     private fun toggleVisibility(button: View) {
         if (button.visibility == View.VISIBLE) {
             button.visibility = View.GONE
@@ -232,8 +251,7 @@ class DashboardFragment : Fragment(){
         imageModel.loadImages()
         val images2 = imageModel.images.value?.map { ImageItems.Image(it) } ?: emptyList()
         Log.d("updateImagesXX", "${images2}")
-        imageAdapter.submitList(images2)
-
+        imageAdapter1.submitList(images2)
     }
 
     override fun onRequestPermissionsResult(
@@ -262,7 +280,7 @@ class DashboardFragment : Fragment(){
     }
 
     private fun toFrameActivity() {
-        val images = imageAdapter.currentList.filterIsInstance<ImageItems.Image>().map { it.uri.toString() }.toTypedArray()
+        val images = imageAdapter1.currentList.filterIsInstance<ImageItems.Image>().map { it.uri.toString() }.toTypedArray()
         val intent = Intent(requireContext(), FrameActivity::class.java)
             .putExtra("images", images)
         startActivity(intent)
@@ -364,6 +382,7 @@ class DashboardFragment : Fragment(){
 
         return uri
     }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -371,34 +390,35 @@ class DashboardFragment : Fragment(){
             when (requestCode) {
                 98 -> {
                     if (data?.extras?.get("data") != null) {
-                        val img = data?.extras?.get("data") as Bitmap
+                        val img = data.extras?.get("data") as Bitmap
                         val uri = saveFile(RandomFileName(), "image/jpeg", img)
-                        if(uri!=null)
+                        if (uri != null)
                             updateImages(listOf(uri))
                     }
                 }
-
                 99 -> {
                     val uri = data?.data
-                    if(uri!=null)
+                    if (uri != null)
                         updateImages(listOf(uri))
                 }
             }
         }
     }
-    fun RandomFileName() : String{
+
+    fun RandomFileName(): String {
         val fileName = SimpleDateFormat("yyyyMMddHHmmss").format(System.currentTimeMillis())
         return fileName
     }
 
     // 갤러리 취득
-    fun GetAlbum(){
-        if(hasCameraPermission(arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE), 99)){
+    fun GetAlbum() {
+        if (hasCameraPermission(arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE), 99)) {
             val itt = Intent(Intent.ACTION_PICK)
             itt.type = MediaStore.Images.Media.CONTENT_TYPE
             startActivityForResult(itt, 99)
         }
     }
+
     companion object {
         const val REQUEST_READ_MEDIA_IMAGES = 100
     }
