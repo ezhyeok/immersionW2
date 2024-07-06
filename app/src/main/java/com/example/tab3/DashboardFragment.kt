@@ -48,48 +48,14 @@ class DashboardFragment : Fragment(){
     private lateinit var photoURI: Uri
     private lateinit var imageModel: DashboardViewModel
     private lateinit var imageAdapter: ImageAdapter
-    /*
-    val CAMERA2 = arrayOf(Manifest.permission.CAMERA)
-    val STORAGE2 = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE,
-        Manifest.permission.WRITE_EXTERNAL_STORAGE)
-    val CAMERA_CODE = 98
-    val STORAGE_CODE = 99
-    */
+
     private val imageLoadLauncher = registerForActivityResult(ActivityResultContracts.GetMultipleContents()) { uriList ->
 
 
-        /*
-        if(uriList.isNotEmpty()){
-            val uriList2=uriList.map {
-                val bitmap = BitmapFactory.decodeStream(requireActivity().contentResolver.openInputStream(it))
-                bitmap.let {
-                    getImageUriFromBitmap(requireContext(), it)
-                }
-            }
-            updateImages(uriList2)
-        }else{
-            updateImages(uriList)
-        }
 
-         */
         updateImages(uriList)
     }
-    /*
-    private fun handleUri(uri: Uri) {
-        try {
-            val bitmap = BitmapFactory.decodeStream(requireActivity().contentResolver.openInputStream(uri))
-            bitmap?.let {
-                val tempUri = getImageUriFromBitmap(requireContext(), it)
-                // Use the tempUri as needed
-            }
-        } catch (e: FileNotFoundException) {
-            e.printStackTrace()
-        }
-    }
-    val bit: Bitmap= Images.Media.getBitmap(content Resolver, uri)
 
-    val tempUri: Uri = getImageUriFromBitmap(applicationContext, bit!!)
-     */
     private fun getImageUriFromBitmap(context: Context?, bitmap: Bitmap): Uri {
         val bytes = ByteArrayOutputStream()
         bitmap.compress(Bitmap.CompressFormat.JPEG,100,bytes)
@@ -174,23 +140,7 @@ class DashboardFragment : Fragment(){
 
         return root
     }
-/*
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.bottom_nav_menu, menu)
-        super.onCreateOptionsMenu(menu, inflater)
-    }
 
-
- */
-    /*override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when(item.itemId) {
-            R.id.action_add -> {
-                checkPermission()
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-    }*/
 
     private fun initRecyclerView() {
         imageAdapter = ImageAdapter(object : ImageAdapter.ItemClickListener {
@@ -368,35 +318,7 @@ class DashboardFragment : Fragment(){
     private fun requestCameraPermission() {
         ActivityCompat.requestPermissions(requireActivity(), arrayOf(Manifest.permission.CAMERA), REQUEST_CAMERA_PERMISSION)
     }
-    /*
-        private fun dispatchTakePictureIntent() {
-            val images = imageAdapter.currentList.filterIsInstance<ImageItems.Image>().map { it.uri.toString() }.toTypedArray()
-            val intent = Intent(requireContext(), FrameActivity::class.java)
-                .putExtra("images", images)
-            startActivity(intent)
-            Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
-                activity?.packageManager?.let {
-                    takePictureIntent.resolveActivity(it)?.also {
-                        val photoFile: File? = try {
-                            createImageFile()
-                        } catch (ex: IOException) {
-                            null
-                        }
-                        photoFile?.also {
-                            photoURI = FileProvider.getUriForFile(
-                                requireContext(),
-                                "com.example.tab3.fileprovider",
-                                it
-                            )
-                            takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
-                            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
-                        }
-                    }
-                }
-            }
-        }
 
-     */
     private fun dispatchTakePictureIntent() {
         if(hasCameraPermission(arrayOf(Manifest.permission.CAMERA), 98) && hasCameraPermission(arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE), 99)){
             val itt = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
