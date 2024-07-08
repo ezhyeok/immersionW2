@@ -1,0 +1,115 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:visibility="gone"
+    >
+
+    <!-- RelativeLayout to overlay the PhotoView and ImageButtons -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <!-- Rotate Counter Clockwise Button -->
+        <ImageButton
+            android:id="@+id/rotate_counterclockwise_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
+
+            android:src="@drawable/ic_person" />
+
+        <!-- Rotate Clockwise Button -->
+        <ImageButton
+            android:id="@+id/rotate_clockwise_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toEndOf="@id/rotate_counterclockwise_button"
+            android:src="@drawable/ic_delete" />
+
+        <!-- 오른쪽 상단에 X 이미지를 추가하여 닫기 기능 구현 -->
+        <ImageView
+            android:id="@+id/close_button"
+            android:layout_width="33dp"
+            android:layout_height="31dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_delete" />
+    </RelativeLayout>
+
+
+    <!-- 중간 부분: 스크롤이 가능한 레이아웃 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <!-- PhotoView로 변경 -->
+        <com.github.chrisbanes.photoview.PhotoView
+            android:id="@+id/dialog_photo_view"
+            android:layout_width="match_parent"
+            android:layout_height="354dp"
+            android:scaleType="fitCenter"
+            />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/layoutComments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 여기에 동적으로 추가되는 메모가 들어갈 예정 -->
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- 하단 메모 입력 창과 + 버튼 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <!-- 메모 입력 창 -->
+        <EditText
+            android:id="@+id/editTextSchedule"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Write a comment..."
+            android:padding="10dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="@color/gray" />
+
+        <ImageButton
+            android:id="@+id/addButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp" />
+
+    </LinearLayout>
+</LinearLayout>
+
+

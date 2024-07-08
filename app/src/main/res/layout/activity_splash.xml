@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context=".SplashActivity">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:id="@+id/GifView"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="-120dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_width="410dp"
+            android:layout_height="130dp"
+            app:layout_constraintBottom_toTopOf="@id/AppNameImage"
+            android:layout_centerVertical="true"
+            android:adjustViewBounds="false"
+            android:src="@drawable/spoon_gif"/>
+    <!-- <ImageView
+        android:id="@+id/SplashScreenImage"
+        android:layout_width="180dp"
+        android:layout_height="90dp"
+        android:src="@drawable/splash_img" />-->
+
+        <ImageView
+            android:id="@+id/AppNameImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/app_name_img"/>
+
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/kakaoLoginButton"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:src="@drawable/kakao_login_large_narrow"
+        app:layout_constraintTop_toBottomOf="@id/GifView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+    <android.widget.Button android:id="@+id/noLoginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:text="게스트 로그인"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:textColor="#FFFFFF"
+        android:background="#EB505461"
+        android:fillColor="#EB505461"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kakaoLoginButton"/>
+    <ImageView
+        android:id="@+id/FromMadCamp"
+        android:layout_width="70dp"
+        android:layout_height="80dp"
+        android:src="@drawable/from_mad_camp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

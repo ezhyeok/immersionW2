@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+    <layouts>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
+        <config>
+          <theme>@style/Theme.Tab3</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+        <config>
+          <theme>@style/Theme.Tab3</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml">
+        <config>
+          <theme>@style/Theme.Design.NoActionBar</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_splash2.xml">
+        <config>
+          <theme>@style/Theme.Design.NoActionBar</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_store_detail.xml">
+        <config>
+          <theme>@style/Theme.Tab3</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/bottom_sheet.xml">
+        <config>
+          <theme>@style/Theme.Tab3</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_add_contact.xml">
+        <config>
+          <theme>@style/Theme.Tab3</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/diary_calendar.xml">
+        <config>
+          <theme>@style/Theme.Tab3</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/edit_image.xml">
+        <config>
+          <theme>@style/Theme.Tab3</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_dashboard.xml">
+        <config>
+          <theme>@style/Theme.Tab3</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_diary_add.xml">
+        <config>
+          <theme>@style/Theme.Tab3</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml">
+        <config>
+          <theme>@style/Theme.Tab3</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_notifications.xml">
+        <config>
+          <theme>@style/Theme.Tab3</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_image.xml">
+        <config>
+          <theme>@style/Theme.Tab3</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_rv.xml">
+        <config>
+          <theme>@style/Theme.Tab3</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/profile_info.xml">
+        <config>
+          <theme>@style/Theme.Tab3</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/profile_select.xml">
+        <config>
+          <theme>@style/Theme.Tab3</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/restaurant_rv.xml">
+        <config>
+          <theme>@style/Theme.Tab3</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml">
+        <config>
+          <theme>@style/Theme.Tab3</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/xml/network_security_config.xml">
+        <config>
+          <theme>@style/Theme.Tab3</theme>
+        </config>
+      </layout>
+    </layouts>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="99dd7baf-816e-4af5-b166-12eef2be6430" name="Changes" comment="카카오 로그인 성공">
+      <change afterPath="$PROJECT_DIR$/../immersionW2-dev1/app/src/main/java/com/example/tab3/OAuth2RedirectHandler.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/kakao_login_large_narrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/checksums/md5-checksums.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/checksums/sha1-checksums.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidPluginAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxCoreLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxDatabindingLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxEspressoLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxLifecycleLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxLifecycleLivedataLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxLifecycleViewmodelLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxNavigationFragmentLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxNavigationLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxNavigationUiLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxRoomLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibs$BundleAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibs$GooglePluginAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibs$JetbrainsKotlinPluginAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibs$JetbrainsPluginAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibs$KoinLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibs$KoinVersionAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibs$PluginAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibs$VersionAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibs.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidPluginAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxCoreLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxDatabindingLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxEspressoLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxLifecycleLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxLifecycleLivedataLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxLifecycleViewmodelLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxNavigationFragmentLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxNavigationLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxNavigationUiLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxRoomLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$BundleAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$GooglePluginAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$JetbrainsKotlinPluginAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$JetbrainsPluginAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$KoinLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$KoinVersionAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$PluginAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$VersionAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/metadata.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/sources/org/gradle/accessors/dm/LibrariesForLibs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/56c4ce92bcc78420e34f7ccc1dcbe568aaa50d8b/sources/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/dependencies-accessors/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/8.7/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/config.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/file-system.probe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.idea/deploymentTargetSelector.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.idea/migrations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.idea/other.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/google-services.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/proguard-rules.pro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/androidTest/java/com/example/tab3/ExampleInstrumentedTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/AppDatabase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/BaseActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/BaseFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/BaseViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/BorderTransformation.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/BottomSheetDialogFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/Converters.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/CurrentProgress.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/DashboardFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/Diary.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/DiaryDao.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/DiaryFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/EditAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/FrameActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/FrameAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/HomeFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/HomeViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/ImageAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/KoinModules.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/MainActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/MapActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/MapTypeConstant.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/MapViewActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/MapViewFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/Menu.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/MyAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/MyApplication.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/MyItem.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/NaverApiService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/NaverMapActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/NetworkHelper.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/NewDiary.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/OnMeterSetListener.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/RemoteDataSourceImpl.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/RetrofitService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/RxScheduler.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/SplashActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/StoreAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/StoreDetailActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/StoreInformation.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/StoreList.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/StoreListAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/StoreResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/StoreResponseItem.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/mobile_navigation.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/ui/dashboard/DashboardViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/ui/notifications/NotificationsFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/ui/notifications/NotificationsViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/java/com/example/tab3/viewmodel/MapViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/anim/side.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/app_name_img.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/background_bottom_sheet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/background_bottomsheet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/blankimg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/calendar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/card_bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/card_item_bg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/circular_add_button.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/circular_button.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/circular_cam_button.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/circular_delete_button.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/circular_zoom_button.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/close_button.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/contacts_img.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/diary.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/diaryimage.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/dragbar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/drawable1/background_bottomsheet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/drawable1/blankimg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/drawable1/calendar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/drawable1/card_item_bg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/drawable1/contacts_img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/drawable1/diary.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/drawable1/diaryimage.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/drawable1/dragbar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/drawable1/gallery_img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/drawable1/ic_baseline_add_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/drawable1/ic_dashboard_black_24dp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/drawable1/ic_delete.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/drawable1/ic_dot_selected.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/drawable1/ic_dot_unselected.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/drawable1/ic_home_black_24dp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/drawable1/ic_launcher_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/drawable1/ic_launcher_foreground.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/drawable1/ic_notifications_black_24dp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/drawable1/ic_person.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/drawable1/save.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/drawable1/savebutton.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/drawable1/selector_tab.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/drawable1/splash_img.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/drawable1/star_empty.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/drawable1/star_filled.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/drawable1/uploadbutton.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/from_mad_camp.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/gallery_img.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/ic_add.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/ic_bakery.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/ic_baseline_add_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/ic_baseline_cancel_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/ic_baseline_location_on_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/ic_baseline_my_location_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/ic_baseline_phone_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/ic_baseline_search_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/ic_basic.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/ic_chinese_food.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/ic_current.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/ic_delete.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/ic_dot_selected.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/ic_dot_unselected.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/ic_fast_food.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/ic_home_black_24dp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/ic_japanese_food.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/ic_korean_food.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/ic_launcher_foreground.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/ic_notifications_black_24dp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/ic_person.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/ic_person_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/ic_person_02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/ic_person_03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/ic_person_04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/ic_person_05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/ic_person_06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/ic_person_07.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/ic_person_08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/ic_question.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/ic_western_food.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/kakao_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/rounded_edittext_calendar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/save.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/savebutton.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/selector_tab.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/splash_img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/spoon_gif.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/spoonfork.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/star_empty.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/star_filled.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/uploadbutton.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/drawable/without_account.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/font/bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/font/custom_font_family.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/font/extrabold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/font/extralight.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/font/light.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/font/madlogfont_bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/font/madlogfont_light.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/font/madlogfont_regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/font/medium.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/font/myfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/font/myfont2.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/font/myfont3.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/font/myfont4.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/font/regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/layout/activity_frame.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/layout/activity_map.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/layout/activity_map_fragment_in_layout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/layout/activity_naver_map.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/layout/activity_splash.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/layout/activity_store_detail.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/layout/activity_store_recycler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/layout/bottom_sheet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/layout/dialog_add_contact.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/layout/diary_calendar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/layout/edit_image.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/layout/fragment_dashboard.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/layout/fragment_diary_add.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/layout/fragment_notifications.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/layout/item_frame.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/layout/item_image.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/layout/item_load_more.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/layout/item_rv.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/layout/modal_bottom_sheet_layout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/layout/profile_select.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/layout/restaurant_rv.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/layout/store_list_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/layout/store_rv.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/menu/bottom_nav_menu.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/menu/main_menu.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/mipmap-hdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/mipmap-mdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/navigation/mobile_navigation.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/values-night/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/values/dimens.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/values/font_style.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/values/ic_launcher_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/xml/backup_rules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/xml/data_extraction_rules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/main/res/xml/file_paths.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/app/src/test/java/com/example/tab3/ExampleUnitTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/gradle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/gradle/libs.versions.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/local.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tab3/settings.gradle.kts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\User\.android\avd\Small_Phone_API_30.avd)]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="tab3" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="tab3" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="tab3" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="tab3" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="resourceFile" />
+        <option value="Kotlin Interface" />
+        <option value="Kotlin Object" />
+        <option value="layoutResourceFile" />
+        <option value="Kotlin File" />
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="deveun" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;rladmstj&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ezhyeok/immersionW2.git&quot;,
+    &quot;accountId&quot;: &quot;789cde44-dbe6-41c0-8557-e1595b9f567d&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2im1CJ0YMdcd1wpxedODf1iS5wj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Android App.app.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev1&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/User/AndroidStudioProjects/qqqqq/app/src/main/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/AndroidStudioProjects/Instagram-Clone-Kotlin-master/Instagram-Clone-Kotlin-master&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;kotlin-gradle-user-dirs&quot;: [
+      &quot;C:\\Users\\User\\.gradle&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\AndroidStudioProjects\qqqqq\app\src\main\java\com\example\tab3" />
+      <recent name="C:\Users\User\AndroidStudioProjects\qqqqq\app\src\main\java" />
+      <recent name="C:\Users\User\AndroidStudioProjects\qqqqq\app\src\main\res\layout" />
+      <recent name="C:\Users\User\AndroidStudioProjects\qqqqq\app\src\main\res\drawable" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="tab3.app.main" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Hybrid>
+      <Java>
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Java>
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="99dd7baf-816e-4af5-b166-12eef2be6430" name="Changes" comment="" />
+      <created>1720080811968</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1720080811968</updated>
+    </task>
+    <task id="LOCAL-00001" summary="로그인 dependency추가">
+      <option name="closed" value="true" />
+      <created>1720088494935</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1720088494936</updated>
+    </task>
+    <task id="LOCAL-00002" summary="로그인 dependency추가">
+      <option name="closed" value="true" />
+      <created>1720095004720</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1720095004720</updated>
+    </task>
+    <task id="LOCAL-00003" summary="로그인 dependency추가">
+      <option name="closed" value="true" />
+      <created>1720095780367</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1720095780367</updated>
+    </task>
+    <task id="LOCAL-00004" summary="카카오 로그인">
+      <option name="closed" value="true" />
+      <created>1720098847501</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1720098847501</updated>
+    </task>
+    <task id="LOCAL-00005" summary="카카오 로그인 성공">
+      <option name="closed" value="true" />
+      <created>1720099705834</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1720099705834</updated>
+    </task>
+    <task id="LOCAL-00006" summary="카카오 로그인 성공">
+      <option name="closed" value="true" />
+      <created>1720100041658</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1720100041658</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="로그인 dependency추가" />
+    <MESSAGE value="카카오 로그인" />
+    <MESSAGE value="카카오 로그인 성공" />
+    <option name="LAST_COMMIT_MESSAGE" value="카카오 로그인 성공" />
+  </component>
+</project>

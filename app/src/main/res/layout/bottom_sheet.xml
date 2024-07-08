@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:id="@+id/bottomSheetLayout"
+        android:layout_width="match_parent"
+        android:layout_height="470dp"
+        android:background="@drawable/background_bottomsheet"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="220dp"
+        android:orientation="vertical"
+        android:elevation="10dp"
+        android:padding="10dp"
+        android:clickable="true"
+        android:focusable="true"
+
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <View
+            android:id="@+id/bar"
+            android:layout_width="80dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/dragbar"
+            android:layout_gravity="center_horizontal"
+            android:elevation="3dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:layout_marginTop="26sp">
+
+            <ImageView
+                android:id="@+id/calendarlogo"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/calendar"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:id="@+id/todayDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:fontFamily="@font/madlogfont_regular"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="0000/00/00" />
+
+            <View
+                android:id="@+id/empty"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:scaleType="centerCrop"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="17sp">
+
+            <TextView
+                android:id="@+id/todayDiary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25sp"
+                android:fontFamily="@font/madlogfont_bold"
+                android:text="오늘의 맛집"
+                android:textSize="23sp" />
+
+            <ImageButton
+                android:id="@+id/deletediary"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@color/white"
+                android:layout_marginStart="130sp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_delete" />
+
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/storeName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/madlogfont_bold"
+                android:text=""
+                android:textSize="23sp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:id="@+id/storeAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/madlogfont_bold"
+                android:text=""
+                android:textSize="15sp" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginStart="15sp"
+            android:layout_marginBottom="10sp"
+            android:layout_marginEnd="15sp"
+            android:layout_marginTop="20sp">
+
+            <ImageButton
+                android:id="@+id/diaryimg"
+                android:layout_width="150dp"
+                android:layout_height="200dp"
+                android:background="@drawable/diaryimage"
+                android:clipToOutline="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/blankimg" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/diaryQuestion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/madlogfont_bold"
+                    android:text="맛집 한 줄 소개"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/diaryContent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0sp"
+                    android:layout_marginTop="10sp"
+                    android:fontFamily="@font/madlogfont_regular"
+                    android:text="@string/nodiary"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>
