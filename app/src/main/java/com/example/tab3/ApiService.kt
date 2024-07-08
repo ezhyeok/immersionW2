@@ -49,5 +49,8 @@ interface ApiService {
 
     @GET("/getReviewImg")
     fun getReviewImgs(@Query("uniqueId") uniqueId: String): Call<List<ReviewItem>>
+    @GET("/getReviewNum")
+    fun getReviewNum(@Query("uniqueId") uniqueId: String): Call<String>
+
 
 }

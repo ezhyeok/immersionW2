@@ -25,7 +25,7 @@ class ProfileFragment : Fragment() {
     private var _binding: ProfileInfoBinding? = null
     private val binding get() = _binding!!
 
-    private var _position:Int = 0
+    private var _position: Int = 0
     private val REQUEST_IMAGE_CAPTURE = 1
     private val REQUEST_CAMERA_PERMISSION = 100
     private lateinit var photoURI: Uri
@@ -62,6 +62,11 @@ class ProfileFragment : Fragment() {
         }
 
         initRecyclerView()
+        childFragmentManager.setFragmentResultListener("newDiaryClosed", this) { _, _ ->
+            // newDiaryClosed 결과를 받으면 initRecyclerView() 실행
+            Log.d("NNNNNNewdiaryClosed", "detected")
+            initRecyclerView()
+        }
         return root
     }
 
@@ -84,6 +89,7 @@ class ProfileFragment : Fragment() {
         fetchReviewItems()
     }
 
+
     private fun fetchReviewItems() {
         val apiService = RetrofitClient.apiService
         val call = apiService.getReviewImgs(ProfileData.uniqueId!!)
@@ -93,7 +99,9 @@ class ProfileFragment : Fragment() {
                 if (response.isSuccessful) {
                     val reviewItems = response.body()
                     Log.d("FetchReviewUrls", "Review Items: $reviewItems")
+                    binding.postNum.text = (reviewItems?:emptyList()).size.toString()
                     if (reviewItems != null) {
+
                         profileAdapter.submitList(reviewItems)
                     }
                 } else {

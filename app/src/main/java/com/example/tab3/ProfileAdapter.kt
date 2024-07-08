@@ -49,7 +49,7 @@ class ProfileAdapter(
         fun bind(item: ReviewItem) {
             val transformation = MultiTransformation(
                 CenterCrop(),
-                RoundedCorners(50)
+                RoundedCorners(20)
             )
 
             Glide.with(binding.root)

@@ -146,7 +146,6 @@ class NewDiary: Fragment() {
         binding.diarySave.setOnClickListener {
             CoroutineScope(Dispatchers.IO).launch{
                 createWorkoutAndNavigateBack(inputimage)
-
             }
         }
 
@@ -177,7 +176,13 @@ class NewDiary: Fragment() {
         }
 
         //update decorators when a new diary entry is added
+        /*
+        CoroutineScope(Dispatchers.Main).launch {
+            (requireParentFragment() as ProfileFragment)
+            parentFragmentManager.setFragmentResult("NewDiaryClosed", Bundle())
+        }
 
+         */
     }
 
     private fun navigateToCalendar() {
@@ -188,7 +193,12 @@ class NewDiary: Fragment() {
         val savedDiary = db?.diaryDao()?.getAll()?: emptyList()
         Log.d("savedDiary", savedDiary.toString())
     }
+    override fun onDestroyView() {
+        super.onDestroyView()
 
+        // 결과를 설정하여 부모 프래그먼트에 알림
+        parentFragmentManager.setFragmentResult("newDiaryClosed", Bundle())
+    }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == REQUEST_CODE && resultCode == AppCompatActivity.RESULT_OK) {
@@ -205,6 +215,9 @@ class NewDiary: Fragment() {
                 x=it.x.toDouble()
                 y=it.y.toDouble()
             }
+            val ppp=selectedStoreItem?.place_name
+            if(ppp!=null)
+                binding.storeName.text=ppp
         }
     }
     private fun uploadReviewToServer(imageUri: Uri?, reviewContent: String) {
