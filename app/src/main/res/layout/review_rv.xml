@@ -1,0 +1,137 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <!-- 두 번째 레이아웃 -->
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:visibility="visible"
+        android:id="@+id/originLayout">
+        <TextView
+            android:id="@+id/uName"
+            android:layout_width="150dp"
+            android:layout_height="35dp"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:contentDescription="Add Photo"
+            app:layout_constraintTop_toTopOf="@id/pImage"
+            app:layout_constraintStart_toEndOf="@id/pImage"
+            android:layout_gravity="center"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            android:layout_marginTop="7dp"
+            />
+        <TextView
+            android:id="@+id/uNickName"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:textSize="12sp"
+            android:contentDescription="Add Photo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_gravity="center"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            android:layout_marginTop="140dp"
+            android:layout_marginStart="20dp"
+            />
+        <Button
+            android:id="@+id/followingButton"
+            android:layout_width="75dp"
+            android:layout_height="40dp"
+            android:text="팔로잉"
+            android:background="@color/teal_200"
+            android:textColor="@android:color/white"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.1" />
+        <ImageButton
+            android:id="@+id/pImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_person"
+            android:contentDescription="Add Photo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            android:layout_marginTop="10dp"/>
+
+        <ImageButton
+            android:id="@+id/deleteButton"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/circular_delete_button"
+            android:background="@drawable/circular_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="70dp"
+            android:layout_marginStart="20dp"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/editButton"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/circular_zoom_button"
+            android:background="@drawable/circular_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="70dp"
+            android:layout_marginEnd="20dp"
+            android:visibility="gone"
+            />
+
+        <ImageButton
+            android:id="@+id/cameraButton"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/circular_cam_button"
+            android:background="@drawable/circular_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="70dp"
+            android:layout_marginStart="20dp"
+            android:visibility="visible"
+            />
+        <ImageButton
+            android:id="@+id/addReviewButton"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/circular_add_button"
+            android:background="@drawable/circular_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="70dp"
+            android:layout_marginEnd="20dp"
+            android:visibility="visible"
+            />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/imageRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="100dp"
+            android:layout_marginTop="180dp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

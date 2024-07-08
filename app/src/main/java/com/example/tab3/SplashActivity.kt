@@ -406,6 +406,10 @@ class SplashActivity : AppCompatActivity() {
                                         ClientData.nickname = userInfo.nickname
                                         ClientData.uniqueId = userInfo.uniqueId
                                         ClientData.profile_image_url = userInfo.profile_image_url
+                                        ProfileData.nickname = userInfo.nickname
+                                        ProfileData.uniqueId = userInfo.uniqueId
+                                        ProfileData.profile_image_url = userInfo.profile_image_url
+
                                         Toast.makeText(this@SplashActivity, "Account allowed", Toast.LENGTH_SHORT).show()
                                         Log.d("MainActivity", "Account allowed $ClientData")
                                         val intent = Intent(this@SplashActivity, MainActivity::class.java)
