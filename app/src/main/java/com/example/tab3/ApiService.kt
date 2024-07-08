@@ -51,6 +51,17 @@ interface ApiService {
     fun getReviewImgs(@Query("uniqueId") uniqueId: String): Call<List<ReviewItem>>
     @GET("/getReviewNum")
     fun getReviewNum(@Query("uniqueId") uniqueId: String): Call<String>
+    @GET("/getReviewSort")
+    fun getReviewSort(): Call<List<ReviewItem>>
+    @GET("/getReviewDetail")
+    fun getReviewDetail(
+        @Query("reviewId") reviewId: String,
+        @Query("uniqueId") uniqueId: String
+    ): Call<ReviewDetail>
 
-
+    @POST("/toggleLike")
+    fun toggleLike(
+        @Query("reviewId") reviewId: String,
+        @Query("uniqueId") uniqueId: String
+    ): Call<String>
 }

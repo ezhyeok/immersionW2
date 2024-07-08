@@ -112,6 +112,7 @@ class NewDiary: Fragment() {
             binding.favorite3.setImageResource(R.drawable.star_empty)
             binding.favorite4.setImageResource(R.drawable.star_empty)
             binding.favorite5.setImageResource(R.drawable.star_empty)
+            latestRating=1
         }
         binding.favorite2.setOnClickListener{
             binding.favorite1.setImageResource(R.drawable.star_filled)
@@ -119,6 +120,7 @@ class NewDiary: Fragment() {
             binding.favorite3.setImageResource(R.drawable.star_empty)
             binding.favorite4.setImageResource(R.drawable.star_empty)
             binding.favorite5.setImageResource(R.drawable.star_empty)
+            latestRating=2
         }
         binding.favorite3.setOnClickListener{
             binding.favorite1.setImageResource(R.drawable.star_filled)
@@ -126,6 +128,7 @@ class NewDiary: Fragment() {
             binding.favorite3.setImageResource(R.drawable.star_filled)
             binding.favorite4.setImageResource(R.drawable.star_empty)
             binding.favorite5.setImageResource(R.drawable.star_empty)
+            latestRating=3
         }
         binding.favorite4.setOnClickListener{
             binding.favorite1.setImageResource(R.drawable.star_filled)
@@ -133,6 +136,7 @@ class NewDiary: Fragment() {
             binding.favorite3.setImageResource(R.drawable.star_filled)
             binding.favorite4.setImageResource(R.drawable.star_filled)
             binding.favorite5.setImageResource(R.drawable.star_empty)
+            latestRating=4
         }
         binding.favorite5.setOnClickListener{
             binding.favorite1.setImageResource(R.drawable.star_filled)
@@ -140,6 +144,7 @@ class NewDiary: Fragment() {
             binding.favorite3.setImageResource(R.drawable.star_filled)
             binding.favorite4.setImageResource(R.drawable.star_filled)
             binding.favorite5.setImageResource(R.drawable.star_filled)
+            latestRating=5
         }
 
 

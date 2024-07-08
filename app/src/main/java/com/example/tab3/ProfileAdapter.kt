@@ -40,6 +40,9 @@ class ProfileAdapter(
     interface ImageClickListener {
         fun onImageClick(position: Int)
     }
+    fun getItemAtPosition(position: Int): ReviewItem? {
+        return if (position in 0 until itemCount) getItem(position) else null
+    }
 
     class ImageViewHolder(
         private val binding: ItemImageBinding,

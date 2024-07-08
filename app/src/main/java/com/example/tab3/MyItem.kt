@@ -6,4 +6,3 @@ data class MyItem(val profile: Int, val name: String, val number: String, var is
         isFavorite = !isFavorite
     }
 }
-data class ReviewItem(val reviewId:String, val reviewImg:String)

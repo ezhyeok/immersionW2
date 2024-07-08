@@ -139,4 +139,6 @@ dependencies {
     implementation("com.android.support:exifinterface:27.0.2")
     //design library for Coordinator Layout
     implementation("com.android.support:design:27.0.2")
+    implementation("com.jakewharton.threetenabp:threetenabp:1.3.1")
+
 }

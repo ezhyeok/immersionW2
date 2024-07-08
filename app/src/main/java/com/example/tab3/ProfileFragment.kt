@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.bumptech.glide.Glide
@@ -30,7 +31,11 @@ class ProfileFragment : Fragment() {
     private val REQUEST_CAMERA_PERMISSION = 100
     private lateinit var photoURI: Uri
     private lateinit var profileAdapter: ProfileAdapter
-
+    companion object {
+        fun newInstance(): ProfileFragment {
+            return ProfileFragment()
+        }
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -41,7 +46,7 @@ class ProfileFragment : Fragment() {
 
         // Profile 이미지 설정
         Glide.with(requireContext())
-            .load(ClientData.profile_image_url)
+            .load(ProfileData.profile_image_url)
             .apply(
                 RequestOptions()
                     .transform(MultiTransformation(CenterCrop(), CircleCrop()))
@@ -67,6 +72,9 @@ class ProfileFragment : Fragment() {
             Log.d("NNNNNNewdiaryClosed", "detected")
             initRecyclerView()
         }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
+            parentFragmentManager.popBackStack()
+        }
         return root
     }
 
@@ -75,6 +83,14 @@ class ProfileFragment : Fragment() {
             object : ProfileAdapter.ImageClickListener {
                 override fun onImageClick(position: Int) {
                     // 이미지 클릭시의 처리 로직
+                    val reviewItem = profileAdapter.getItemAtPosition(position)
+
+                    val newReviewFragment=reviewFragment.newInstance(reviewItem!!.reviewId, reviewItem!!.reviewImg)
+                    //binding.originLayout.visibility=View.GONE
+                    childFragmentManager.beginTransaction()
+                        .replace(R.id.originLayout, newReviewFragment)
+                        .addToBackStack(null)
+                        .commit()
                     println("Clicked item: $position")
                     _position = position
                 }
