@@ -63,6 +63,7 @@ class reviewFragment: Fragment(){
         binding.favorite4.setImageResource(R.drawable.star_empty)
         binding.favorite5.setImageResource(R.drawable.star_empty)
         binding.rImage.setOnClickListener{
+
             childFragmentManager.beginTransaction()
                 .replace(R.id.singleReviewPage, ProfileFragment.newInstance())
                 .addToBackStack(null)
@@ -108,6 +109,7 @@ class reviewFragment: Fragment(){
                     val reviewItems = response.body()
                     Log.d("FetchReviewUrls", "Review Items: $reviewItems")
                     if(reviewItems!=null) {
+                        var profile_image_url: String?=null
                         binding.uName.text = reviewItems.uniqueId
                         binding.storeName.text = reviewItems.restaurantName
                         Log.d("qqqqqqqqq", reviewItems.profile_img)

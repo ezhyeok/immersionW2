@@ -5,7 +5,7 @@ object ClientData {
     var nickname: String?=null
     var profile_image_url: String?=null
 }
-object ProfileData {
+object ImmData {
     var uniqueId: String?=null
     var nickname: String?=null
     var profile_image_url: String?=null

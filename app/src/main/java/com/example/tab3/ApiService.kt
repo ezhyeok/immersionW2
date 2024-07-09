@@ -54,14 +54,39 @@ interface ApiService {
     @GET("/getReviewSort")
     fun getReviewSort(): Call<List<ReviewItem>>
 
+    @GET("/getUserData")//내가 팔로우하는 사람들 이미지
+    fun getUserData(@Query("uniqueId") uniqueId:String):Call<ProfileItem>
+
+
     @GET("/getFollowingProfileSort")//내가 팔로우하는 사람들 이미지
     fun getProfileSort(@Query("uniqueId") uniqueId:String):Call<List<ProfileItem>>
+
+    @GET("/getFollowProfileSort")//나를 팔로우하는 사람들 이미지
+    fun getProfileSortFollow(@Query("uniqueId") uniqueId:String):Call<List<ProfileItem>>
 
     @GET("/getStore")
     fun getStore():Call<List<StoreItem>>
 
     @GET("/getFollowNum")
     fun getFollowNum(@Query("uniqueId") uniqueId: String):Call<FollowNum>
+
+    @POST("/showFollow")
+    fun showFollow(
+        @Query("id") id: String,
+        @Query("opid") opid: String
+    ): Call<Boolean>
+
+    @POST("/addFollow")
+    fun addFollow(
+        @Query("id") id: String,
+        @Query("opid") opid: String
+    ): Call<ResponseMessage>
+
+    @POST("/delFollow")
+    fun delFollow(
+        @Query("id") id: String,
+        @Query("opid") opid: String
+    ): Call<ResponseMessage>
 
     @GET("/getReviewDetail")
     fun getReviewDetail(
@@ -76,3 +101,4 @@ interface ApiService {
     ): Call<String>
 
 }
+

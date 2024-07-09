@@ -12,7 +12,7 @@ data class ImageCopyResponse(
     val success: Boolean,
     val imgUrl: String?
 )
-data class ProfileItem(val uniqueId:String,val profileImg:String)
+data class ProfileItem(val uniqueId:String,val profileImg:String, val name: String)
 
 data class StoreItem(val restaurantId:String,val name:String,val starScore:String,val num:String,val reviewCount:String)//float??
 
@@ -24,3 +24,6 @@ data class ReviewItem(val reviewId:String, val reviewImg:String)
 
 data class ReviewDetail(val uniqueId:String, val rating:String, val reviewContent:String, val createdAt: String, val restaurantName:String, val profile_img: String, val follow: String, val clientLike:String, val numLike:String)
 
+data class ResponseMessage(
+    val message: String
+)

@@ -159,7 +159,8 @@ class DashboardFragment : Fragment(){
                             ClientData.profile_image_url?.let {
                                 ProfileItem(
                                     ClientData.uniqueId!!,
-                                    it
+                                    it,
+                                    ClientData.nickname!!
                                 )
                             }
                         if (newItem != null) {
