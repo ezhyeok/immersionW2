@@ -24,6 +24,8 @@ class HomeFragment : Fragment() {
     private var city:String="전체"
     private var sortby:String="별점 순"
 
+    private var showFollowersOnly: Boolean = false
+
     private var _position: Int = 0
 
     var inputimage: Uri? = null
@@ -60,7 +62,12 @@ class HomeFragment : Fragment() {
             override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
                 val selectedCity = parent.getItemAtPosition(position).toString()
                 city=selectedCity
-                fetchStoreItems()
+                if(showFollowersOnly==true){
+                    fetchStoreItemsByF()
+                }
+                else{
+                    fetchStoreItems()
+                }
                 Log.d("MainActivity", "Selected city: $selectedCity")
             }
 
@@ -73,7 +80,12 @@ class HomeFragment : Fragment() {
             override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
                 val selectedSort = parent.getItemAtPosition(position).toString()
                 sortby=selectedSort
-                fetchStoreItems()
+                if(showFollowersOnly==true){
+                    fetchStoreItemsByF()
+                }
+                else{
+                    fetchStoreItems()
+                }
                 Log.d("MainActivity", "Selected city: $selectedSort")
             }
 
@@ -81,6 +93,15 @@ class HomeFragment : Fragment() {
             override fun onNothingSelected(parent: AdapterView<*>) {
                 // Do nothing
             }
+        }
+        binding.switchSync.setOnCheckedChangeListener { _, isChecked ->
+            showFollowersOnly = isChecked
+            if(showFollowersOnly){
+            fetchStoreItemsByF()
+            }else {
+                fetchStoreItems()
+            }
+
         }
 
         initRecyclerView()
@@ -149,4 +170,31 @@ class HomeFragment : Fragment() {
             }
         })
     }
+
+    private fun fetchStoreItemsByF() {
+        val apiService = RetrofitClient.apiService
+        val call = apiService.getStorefollowers(city,sortby, ClientData.uniqueId.toString())
+
+        call.enqueue(object : Callback<List<StoreItem>> {
+            override fun onResponse(
+                call: Call<List<StoreItem>>,
+                response: Response<List<StoreItem>>
+            ) {
+                if (response.isSuccessful) {
+                    val storeItems = response.body()
+                    Log.d("FetchStore11", "Store")
+                    if (storeItems != null) {
+                        storeadapter.submitList(storeItems)
+                    }
+                } else {
+                    Log.e("NO,,", "ee")
+                }
+            }
+            override fun onFailure(call: Call<List<StoreItem>>, t: Throwable) {
+                Log.e("fetch failed", "e")
+            }
+        })
+    }
 }
+
+

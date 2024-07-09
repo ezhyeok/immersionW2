@@ -60,6 +60,9 @@ interface ApiService {
     @GET("/getStore")
     fun getStore(@Query("city") city:String,@Query("sortby") sortby:String):Call<List<StoreItem>>
 
+    @GET("/getStorefollowers")
+    fun getStorefollowers(@Query("city") city:String,@Query("sortby") sortby:String,@Query("pid") pid:String):Call<List<StoreItem>>
+
     @GET("/getFollowNum")
     fun getFollowNum(@Query("uniqueId") uniqueId: String):Call<FollowNum>
 
