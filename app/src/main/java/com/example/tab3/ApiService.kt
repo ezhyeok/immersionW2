@@ -28,6 +28,7 @@ interface ApiService {
     @POST("/copyDefaultImage")
     fun copyDefaultImage(@Body request: Map<String, String>): Call<ImageCopyResponse>
 
+
     @POST("/permission")
     fun getpermission(@Body request: Map<String, String>): Call<permissionResponse>
 
@@ -49,13 +50,15 @@ interface ApiService {
 
     @GET("/getReviewImg")
     fun getReviewImgs(@Query("uniqueId") uniqueId: String): Call<List<ReviewItem>>
+
     @GET("/getReviewNum")
     fun getReviewNum(@Query("uniqueId") uniqueId: String): Call<String>
+
     @GET("/getReviewSort")
     fun getReviewSort(): Call<List<ReviewItem>>
 
     @GET("/getUserData")//내가 팔로우하는 사람들 이미지
-    fun getUserData(@Query("uniqueId") uniqueId:String):Call<ProfileItem>
+    fun getUserData(@Query("reviewId") reviewId:String):Call<ProfileItem>
 
 
     @GET("/getFollowingProfileSort")//내가 팔로우하는 사람들 이미지
@@ -65,7 +68,10 @@ interface ApiService {
     fun getProfileSortFollow(@Query("uniqueId") uniqueId:String):Call<List<ProfileItem>>
 
     @GET("/getStore")
-    fun getStore():Call<List<StoreItem>>
+    fun getStore(@Query("city") city:String,@Query("sortby") sortby:String):Call<List<StoreItem>>
+
+    @GET("/getStorefollowers")
+    fun getStorefollowers(@Query("city") city:String,@Query("sortby") sortby:String,@Query("pid") pid:String):Call<List<StoreItem>>
 
     @GET("/getFollowNum")
     fun getFollowNum(@Query("uniqueId") uniqueId: String):Call<FollowNum>

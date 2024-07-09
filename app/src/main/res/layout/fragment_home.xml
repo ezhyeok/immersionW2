@@ -1,96 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/followPage"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="false"
-        tools:context=".MainActivity">
-        <View
-            android:id="@+id/whiteOverlay"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@android:color/white"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:clickable="true"
-            android:focusable="true" />
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/searchCont"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:clickable="true"
-            android:paddingTop="16dp"
-            app:iconifiedByDefault="false"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="-7dp"
-            app:queryBackground="@android:color/transparent"
-            app:queryHint="Search" />
+    android:fitsSystemWindows="false"
+    tools:context=".HomeFragment">
 
-        <!-- RecyclerView -->
-        <!-- 초기에는 숨김 처리 -->
+    <!-- RecyclerView -->
+    <!-- 초기에는 숨김 처리 -->
 
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerV"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="#FFFFFF"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/searchCont"
-            app:layout_constraintVertical_bias="0.322" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerV"
+        android:layout_width="443dp"
+        android:layout_height="565dp"
+        android:background="#FFFFFF"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/citySpinner" />
 
-        <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/switchSync"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textOff="OFF"
-            android:textOn="ON"
-            android:showText="true"
-            android:trackTint="@color/red"
-            android:thumbTint="@color/green"
-            android:padding="0dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            />
-        <TextView
-            android:id="@+id/textViewSync"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="지도로 보기"
-            android:textColor="@color/mainpurple"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="55dp"
-            android:layout_marginTop="17dp"
-            android:textSize="16sp"
-            android:layout_gravity="center_vertical" />
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchSync"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="144dp"
+        android:padding="0dp"
+        android:showText="true"
+        android:textOff="OFF"
+        android:textOn="ON"
+        android:thumbTint="@color/green"
+        android:trackTint="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewSync2"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
-            android:id="@+id/buttonAddContact"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:src="@drawable/circular_add_button"
-            android:background="@drawable/circular_button"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="70dp"
-            android:layout_marginEnd="20dp"
-            />
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchSync2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:padding="0dp"
+        android:showText="true"
+        android:textOff="OFF"
+        android:textOn="ON"
+        android:thumbTint="@color/green"
+        android:trackTint="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewSync"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="지도로 보기"
+        android:textColor="@color/mainpurple"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="55dp"
+        android:layout_marginTop="17dp"
+        android:textSize="16sp"
+        android:layout_gravity="center_vertical" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</FrameLayout>
+    <TextView
+        android:id="@+id/textViewSync2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="188dp"
+        android:text="팔로잉만 보기"
+        android:textColor="@color/mainpurple"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/citySpinner"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:entries="@array/cities_array"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/sortSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:entries="@array/sort_array"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.945"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSync" />
+</androidx.constraintlayout.widget.ConstraintLayout>

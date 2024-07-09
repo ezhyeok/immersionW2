@@ -26,7 +26,6 @@ interface NaverApiService {
         @Query(value = "query", encoded = true) query: String,
         @Query("x") x: String,
         @Query("y") y: String,
-        @Query("radius") radius: Int=6000,
         @Query("sort") sort: String="accuracy"
     ): Single<StoreResponse>
 }

@@ -63,11 +63,29 @@ class reviewFragment: Fragment(){
         binding.favorite4.setImageResource(R.drawable.star_empty)
         binding.favorite5.setImageResource(R.drawable.star_empty)
         binding.rImage.setOnClickListener{
+            val apiService = RetrofitClient.apiService
+            val call = apiService.getUserData(reviewId)
+            call.enqueue(object : Callback<ProfileItem> {
+                override fun onResponse(call: Call<ProfileItem>, response: Response<ProfileItem>) {
+                    if (response.isSuccessful) {
+                        val reviewItems = response.body()
+                        Log.d("FetchReviewUrls", "Review Items: $reviewItems")
+                        if(reviewItems!=null) {
+                            childFragmentManager.beginTransaction()
+                                .replace(R.id.singleReviewPage, ProfileFragment.newInstance(profileItem = ProfileItem(reviewItems.uniqueId, reviewItems.profileImg, reviewItems.name)))
+                                .addToBackStack(null)
+                                .commit()
 
-            childFragmentManager.beginTransaction()
-                .replace(R.id.singleReviewPage, ProfileFragment.newInstance())
-                .addToBackStack(null)
-                .commit()
+                        }
+                    } else {
+                        Log.e("FetchReviewUrls", "Error: ${response.message()}")
+                    }
+                }
+
+                override fun onFailure(call: Call<ProfileItem>, t: Throwable) {
+                    Log.e("FetchReviewUrls", "Failed to fetch review URLs", t)
+                }
+            })
         }
         binding.rLike.setOnClickListener{
             val apiService = RetrofitClient.apiService

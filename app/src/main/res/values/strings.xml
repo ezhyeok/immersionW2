@@ -10,4 +10,27 @@
 
     <string name="naver_client_id">client_id 값</string>
     <string name="naver_client_secret">client_secret 값</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string-array name="cities_array">
+        <item>전체</item>
+        <item>서울</item>
+        <item>부산</item>
+        <item>대구</item>
+        <item>인천</item>
+        <item>광주</item>
+        <item>대전</item>
+        <item>울산</item>
+        <item>세종</item>
+    </string-array>
+
+    <string-array name="sort_array">
+        <item>별점 순</item>
+        <item>리뷰 많은 순</item>
+    </string-array>
+
+
+
 </resources>

@@ -331,6 +331,7 @@ class ProfileFragment : Fragment() {
             object : ProfileAdapter.ImageClickListener {
                 override fun onImageClick(position: Int) {
                     // 이미지 클릭시의 처리 로직
+                    binding.followingButton.visibility=View.GONE
                     val reviewItem = profileAdapter.getItemAtPosition(position)
 
                     val newReviewFragment=reviewFragment.newInstance(reviewItem!!.reviewId, reviewItem!!.reviewImg)

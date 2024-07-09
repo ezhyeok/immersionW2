@@ -12,7 +12,7 @@ class RemoteDataSourceImpl : NaverApiService {
         return retrofitService.getSurroundStoreList(query, x, y, radius)
     }
 
-    override fun getSearchResultStoreList(query: String, x: String, y: String, radius: Int, sort: String): Single<StoreResponse> {
-        return retrofitService.getSearchResultStoreList(query, x, y, radius, sort)
+    override fun getSearchResultStoreList(query: String, x: String, y: String, sort: String): Single<StoreResponse> {
+        return retrofitService.getSearchResultStoreList(query, x, y, sort)
     }
 }

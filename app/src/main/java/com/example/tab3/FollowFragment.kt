@@ -13,7 +13,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.tab3.databinding.FragmentHomeBinding
+import com.example.tab3.databinding.FragmentProfileBinding
 import android.util.Log
 import android.Manifest
 import android.Manifest.permission.READ_EXTERNAL_STORAGE
@@ -34,7 +34,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class FollowFragment : Fragment() {
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
     private lateinit var homeViewModel: HomeViewModel
     private lateinit var adapter: FollowAdapter
@@ -70,7 +70,7 @@ class FollowFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         // Initialize RecyclerView
@@ -88,7 +88,7 @@ class FollowFragment : Fragment() {
         adapter = FollowAdapter(followers)
         binding.recyclerV.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerV.adapter = adapter
-        binding.searchCont.setQuery("", false)
+        //binding.searchCont.setQuery("", false)
         // Observe contacts LiveData
         /*
         homeViewModel.contacts.observe(viewLifecycleOwner) { contacts ->
