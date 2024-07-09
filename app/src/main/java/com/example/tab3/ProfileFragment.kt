@@ -54,6 +54,27 @@ class ProfileFragment : Fragment() {
                     .diskCacheStrategy(DiskCacheStrategy.NONE)
             )
             .into(binding.pImage)
+        val apiService = RetrofitClient.apiService
+        val call = apiService.getFollowNum(ProfileData.uniqueId!!)
+        call.enqueue(object : Callback<FollowNum> {
+            override fun onResponse(call: Call<FollowNum>, response: Response<FollowNum>) {
+                if (response.isSuccessful) {
+                    val reviewItems = response.body()
+                    Log.d("FetchReviewUrls", "Review Items: $reviewItems")
+                    if(reviewItems!=null) {
+                        binding.followNum.text=reviewItems.followNum
+                        binding.followingNum.text=reviewItems.followingNum
+                    }
+                } else {
+                    Log.e("FetchReviewUrls", "Error: ${response.message()}")
+                }
+            }
+
+            override fun onFailure(call: Call<FollowNum>, t: Throwable) {
+                Log.e("FetchReviewUrls", "Failed to fetch review URLs", t)
+            }
+        })
+
 
         binding.uName.text = ProfileData.uniqueId
         binding.uNickName.text = ProfileData.nickname

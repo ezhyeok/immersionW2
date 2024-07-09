@@ -18,6 +18,8 @@ data class StoreItem(val restaurantId:String,val name:String,val starScore:Strin
 
 data class permissionResponse(val allow: Boolean, val userInfo: Profile?)
 
+data class FollowNum(val followNum: String, val followingNum: String)
+
 data class ReviewItem(val reviewId:String, val reviewImg:String)
 
 data class ReviewDetail(val uniqueId:String, val rating:String, val reviewContent:String, val createdAt: String, val restaurantName:String, val profile_img: String, val follow: String, val clientLike:String, val numLike:String)
