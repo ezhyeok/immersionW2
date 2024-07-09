@@ -58,7 +58,7 @@ interface ApiService {
     fun getProfileSort(@Query("uniqueId") uniqueId:String):Call<List<ProfileItem>>
 
     @GET("/getStore")
-    fun getStore():Call<List<StoreItem>>
+    fun getStore(@Query("city") city:String,@Query("sortby") sortby:String):Call<List<StoreItem>>
 
     @GET("/getFollowNum")
     fun getFollowNum(@Query("uniqueId") uniqueId: String):Call<FollowNum>

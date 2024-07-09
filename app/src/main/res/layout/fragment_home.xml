@@ -8,20 +8,6 @@
     android:fitsSystemWindows="false"
     tools:context=".HomeFragment">
 
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/searchCont"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:clickable="true"
-        android:paddingTop="16dp"
-        app:iconifiedByDefault="false"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="-7dp"
-        app:queryBackground="@android:color/transparent"
-        app:queryHint="Search" />
-
     <!-- RecyclerView -->
     <!-- 초기에는 숨김 처리 -->
 
@@ -35,8 +21,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/searchCont"
-        app:layout_constraintVertical_bias="0.322" />
+        app:layout_constraintTop_toBottomOf="@id/citySpinner" />
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/switchSync"
@@ -64,17 +49,27 @@
         android:textSize="16sp"
         android:layout_gravity="center_vertical" />
 
-    <ImageButton
-        android:id="@+id/buttonAddContact"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:src="@drawable/circular_add_button"
-        android:background="@drawable/circular_button"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+    <Spinner
+        android:id="@+id/citySpinner"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:entries="@array/cities_array"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/sortSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:entries="@array/sort_array"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="70dp"
-        android:layout_marginEnd="20dp"
-        />
-
-
+        app:layout_constraintHorizontal_bias="0.945"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSync" />
 </androidx.constraintlayout.widget.ConstraintLayout>
