@@ -16,6 +16,10 @@
     <color name="store_detail_background">#f9f9f9</color>
     <color name="indigo">#3F51B5</color>
     <color name="white_indigo">#593F51B5</color>
-    <color name="mainyellow">#FFF7941E</color>
-    <color name="orange">#ffA500</color>
+    <color name="orange">#ff5f5f</color>
+    <color name="mainyellow">#ff5f5f</color>
+
 </resources>
+
+<!--<color name="mainyellow">#FFF7941E</color>-->
+<!--<color name="orange">#ffA500</color>-->
