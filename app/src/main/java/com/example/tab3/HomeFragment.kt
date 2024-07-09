@@ -77,6 +77,24 @@ class HomeFragment : Fragment() {
             object:MyAdapter.ItemClickListener{
                 override fun onItemClick(position:Int){
                     _position=position
+                    val storeItem = storeadapter.currentList[position]
+                    val storeResponseItem = StoreResponseItem(
+                        place_name = storeItem.name,
+                        distance = "",
+                        place_url = "",
+                        category_name = storeItem.starScore,
+                        address_name = "",
+                        road_address_name = "",
+                        id = storeItem.restaurantId,
+                        phone = storeItem.num,
+                        category_group_code = "",
+                        category_group_name = storeItem.reviewCount,
+                        x = "0.0",
+                        y = "0.0"
+                    )
+                    val intent = Intent(activity, StoreDetailActivity::class.java)
+                    intent.putExtra(StoreDetailActivity.STORE_ITEM, storeResponseItem)
+                    startActivity(intent)
                 }
             }
         )

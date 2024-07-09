@@ -10,4 +10,6 @@
 
     <string name="naver_client_id">client_id 값</string>
     <string name="naver_client_secret">client_secret 값</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

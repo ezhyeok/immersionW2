@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 
 import com.bumptech.glide.Glide
-import com.example.tab3.databinding.ActivityStoreDetailBinding
+import com.example.tab3.databinding.ActivityStoreRecyclerBinding
 import java.text.DecimalFormat
 import android.util.Log
 import android.widget.Toast
@@ -21,7 +21,6 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tab3.MapActivity.Companion
 import com.example.tab3.MapViewFragment.Companion.currentPosition
-import com.example.tab3.databinding.ActivityStoreRecyclerBinding
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.naver.maps.geometry.LatLng
@@ -32,7 +31,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 import com.naver.maps.map.CameraUpdate
-import com.naver.maps.map.CameraUpdateParams
 import com.naver.maps.map.MapFragment
 import com.naver.maps.map.OnMapReadyCallback
 import com.naver.maps.map.overlay.LocationOverlay
@@ -52,12 +50,13 @@ class StoreDetailActivity : AppCompatActivity(), OnMapReadyCallback {
     )
     val TAG = "StoreDetailActivity"
 
-    private lateinit var storeItem: StoreResponseItem
+    private var storeItem: StoreResponseItem? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d(TAG, "Checked")
-        setContentView(R.layout.activity_store_recycler)
+
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_store_recycler)
 
         // Fragment 초기화
         if (savedInstanceState == null) {
@@ -68,31 +67,34 @@ class StoreDetailActivity : AppCompatActivity(), OnMapReadyCallback {
             mapFragment.getMapAsync(this)
         }
 
-        // DataBinding
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_store_recycler)
-
         // 전달받은 Store Item 정보를 얻음
-        storeItem = intent.getParcelableExtra<StoreResponseItem>(STORE_ITEM)!!
+        storeItem = intent.getParcelableExtra(STORE_ITEM)
+        if (storeItem == null) {
+            Log.e(TAG, "Store item is null")
+            Toast.makeText(this, "가게 정보를 불러오는 중 오류가 발생했습니다.", Toast.LENGTH_SHORT).show()
+            finish()
+            return
+        }
+
         Log.d("storeItemInfo", "$storeItem")
         var items: List<Diary> = listOf()
         binding.recyclerView.layoutManager = LinearLayoutManager(this@StoreDetailActivity)
-        val storeAdapter = StoreAdapter( mutableListOf())
+        val storeAdapter = StoreAdapter(mutableListOf())
         binding.recyclerView.adapter = storeAdapter
 
         CoroutineScope(Dispatchers.IO).launch {
             val db = AppDatabase.getInstance(this@StoreDetailActivity)
             val allItems = db.diaryDao().getAll()
             Log.d("storeItemInfo", "$allItems")
-            Log.d("storeItemInfoif", "${storeItem.id}")
+            Log.d("storeItemInfoif", "${storeItem?.id}")
 
-            items = if (storeItem.id != null && allItems.isNotEmpty()) {
-                Log.d("storeItemInfoisnotnull", "${storeItem.id}")
+            items = if (storeItem?.id != null && allItems.isNotEmpty()) {
+                Log.d("storeItemInfoisnotnull", "${storeItem?.id}")
                 Log.d("storeItemInfoisnotnull", "${allItems[0].id}")
-                Log.d("storeItemInfoisnotnull", "${allItems.filter { it.id == storeItem.id }}")
-                allItems.filter { it.id == storeItem.id }
-
+                Log.d("storeItemInfoisnotnull", "${allItems.filter { it.id == storeItem?.id }}")
+                allItems.filter { it.id == storeItem?.id }
             } else {
-                Log.d("storeItemInfoisnull", "${storeItem}")
+                Log.d("storeItemInfoisnull", "$storeItem")
 
                 allItems
             }
@@ -102,30 +104,29 @@ class StoreDetailActivity : AppCompatActivity(), OnMapReadyCallback {
                     storeAdapter.items.addAll(items)
                     storeAdapter.notifyDataSetChanged()
                 } else {
-                    Log.d("storeItemInfo", "No items found for storeItem: ${storeItem.id}")
+                    Log.d("storeItemInfo", "No items found for storeItem: ${storeItem?.id}")
                 }
-
             }
         }
-        Log.d("storeItemInfoitems", "${items}")
+        Log.d("storeItemInfoitems", "$items")
 
-        binding.storeName.text = storeItem.place_name
-        binding.storeType.text = storeItem.category_name
+        binding.storeName.text = storeItem?.place_name
+        binding.storeType.text = storeItem?.category_name
 
         // 장소 위치 정보를 기반으로 GoogleMap Intent
-        binding.storeAddress.text = storeItem.address_name
+        binding.storeAddress.text = storeItem?.address_name
         binding.storeLocationCard.setOnClickListener {
-            val gmmIntentUri = Uri.parse("geo:0,0?q=${storeItem.address_name}")
+            val gmmIntentUri = Uri.parse("geo:0,0?q=${storeItem?.address_name}")
             val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
             mapIntent.setPackage("com.google.android.apps.maps")
             startActivity(mapIntent)
         }
 
         // 전화번호 정보를 기반으로 Call Intent
-        binding.storePhoneNumber.text = storeItem.phone
+        binding.storePhoneNumber.text = storeItem?.phone
         binding.phoneNumberCard.setOnClickListener {
             val callIntent = Intent(Intent.ACTION_VIEW)
-            callIntent.data = Uri.parse("tel:" + storeItem.phone)
+            callIntent.data = Uri.parse("tel:" + storeItem?.phone)
             startActivity(callIntent)
         }
 
@@ -200,8 +201,8 @@ class StoreDetailActivity : AppCompatActivity(), OnMapReadyCallback {
         locationOverlay.isVisible = true
         locationOverlay.position = currentPosition
 
-        val storePosition = LatLng(storeItem.y.toDouble(), storeItem.x.toDouble())
-        Log.d(TAG, "Store Position onMapReady: $storePosition") // Debug log 추가
+        val storePosition = LatLng(storeItem?.y?.toDouble() ?: 0.0, storeItem?.x?.toDouble() ?: 0.0)
+        Log.d(TAG, "Store Position onMapReady: $storePosition")
         val storeMarker = Marker().apply {
             icon = OverlayImage.fromResource(R.drawable.ic_basic)
             position = storePosition

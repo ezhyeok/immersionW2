@@ -108,7 +108,7 @@ class DashboardFragment : Fragment(){
                 override fun onImageClick(position:Int){
                     println("Clicked item:$position")
                     _position2=position
-
+                    updateSecondRecyclerView(position)
                 }
             }
         )
