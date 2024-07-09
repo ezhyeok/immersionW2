@@ -70,12 +70,27 @@
           <theme>@style/Theme.Tab3</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_frame.xml">
+        <config>
+          <theme>@style/Theme.Tab3</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_image.xml">
         <config>
           <theme>@style/Theme.Tab3</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_image_tab2.xml">
+        <config>
+          <theme>@style/Theme.Tab3</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_rv.xml">
+        <config>
+          <theme>@style/Theme.Tab3</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/profile_image.xml">
         <config>
           <theme>@style/Theme.Tab3</theme>
         </config>
@@ -96,6 +111,11 @@
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/review_rv.xml">
+        <config>
+          <theme>@style/Theme.Tab3</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/store_list_item.xml">
         <config>
           <theme>@style/Theme.Tab3</theme>
         </config>
@@ -425,7 +445,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=R3CR7074GHK)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\User\.android\avd\Small_Phone_API_30.avd)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -475,9 +495,9 @@
         <option value="Kotlin Interface" />
         <option value="Kotlin Object" />
         <option value="Kotlin File" />
-        <option value="layoutResourceFile" />
         <option value="resourceFile" />
         <option value="Kotlin Class" />
+        <option value="layoutResourceFile" />
       </list>
     </option>
   </component>
@@ -544,8 +564,8 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\User\AndroidStudioProjects\qqqqq\app\src\main\java\com\example\tab3" />
-      <recent name="C:\Users\User\AndroidStudioProjects\qqqqq\app\src\main\java" />
       <recent name="C:\Users\User\AndroidStudioProjects\qqqqq\app\src\main\res\layout" />
+      <recent name="C:\Users\User\AndroidStudioProjects\qqqqq\app\src\main\java" />
       <recent name="C:\Users\User\AndroidStudioProjects\qqqqq\app\src\main\res\drawable" />
     </key>
   </component>

@@ -13,7 +13,6 @@ import androidx.activity.addCallback
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.FragmentTransaction
-import com.example.tab3.MyAdapter.NumberClick
 import com.example.tab3.databinding.FragmentDiaryAddBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

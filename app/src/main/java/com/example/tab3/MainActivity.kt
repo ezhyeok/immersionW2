@@ -5,11 +5,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.tab3.databinding.ActivityMainBinding
-import com.kakao.sdk.user.UserApiClient
-import android.content.Intent
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,15 +21,33 @@ class MainActivity : AppCompatActivity() {
         val navView: BottomNavigationView = binding.navView
 
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
 
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
             )
         )
-        //setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        navView.setOnNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.navigation_home -> {
+                    navController.popBackStack(R.id.navigation_home, false)
+                    navController.navigate(R.id.navigation_home)
+                    true
+                }
+                R.id.navigation_dashboard -> {
+                    navController.popBackStack(R.id.navigation_dashboard, false)
+                    navController.navigate(R.id.navigation_dashboard)
+                    true
+                }
+                R.id.navigation_notifications -> {
+                    navController.popBackStack(R.id.navigation_notifications, false)
+                    navController.navigate(R.id.navigation_notifications)
+                    true
+                }
+                else -> false
+            }
+        }
     }
 }

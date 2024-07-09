@@ -53,6 +53,13 @@ interface ApiService {
     fun getReviewNum(@Query("uniqueId") uniqueId: String): Call<String>
     @GET("/getReviewSort")
     fun getReviewSort(): Call<List<ReviewItem>>
+
+    @GET("/getProfileSort")//내가 팔로우하는 사람들 이미지
+    fun getProfileSort(@Query("uniqueId") uniqueId:String):Call<List<ProfileItem>>
+
+    @GET("/getStore")
+    fun getStore():Call<List<StoreItem>>
+
     @GET("/getReviewDetail")
     fun getReviewDetail(
         @Query("reviewId") reviewId: String,

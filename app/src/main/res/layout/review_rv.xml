@@ -54,10 +54,11 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:text="팔로우"
+
             android:textSize="12sp"
             android:textStyle="bold"
             android:visibility="visible"
-            android:background="@color/teal_200"
+            android:background="@drawable/rounded_edittext_calendar"
             android:textColor="@android:color/white"
             android:layout_gravity="center_vertical"
             android:layout_marginTop="5dp"
