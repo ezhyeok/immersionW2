@@ -11,6 +11,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.tab3.NewDiary.Companion.REQUEST_CODE
 import com.example.tab3.databinding.FragmentHomeBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -21,6 +22,7 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var homeViewModel: HomeViewModel
     private lateinit var storeadapter: MyAdapter
+    private var latestStores= emptyList<StoreItem>()
     private var city:String="전체"
     private var sortby:String="별점 순"
 
@@ -103,7 +105,10 @@ class HomeFragment : Fragment() {
             }
 
         }
-
+        binding.mapButton.setOnClickListener{
+            val intent = MapShowActivity.newInstance(requireContext(), latestStores)
+            startActivityForResult(intent, REQUEST_CODE)
+        }
         initRecyclerView()
         return root
     }
@@ -119,22 +124,9 @@ class HomeFragment : Fragment() {
                 override fun onItemClick(position: Int) {
                     _position = position
                     val storeItem = storeadapter.currentList[position]
-                    val storeResponseItem = StoreResponseItem(
-                        place_name = storeItem.name,
-                        distance = "",
-                        place_url = "",
-                        category_name = storeItem.starScore,
-                        address_name = "",
-                        road_address_name = "",
-                        id = storeItem.restaurantId,
-                        phone = storeItem.num,
-                        category_group_code = "",
-                        category_group_name = storeItem.reviewCount,
-                        x = "0.0",
-                        y = "0.0"
-                    )
-                    val intent = Intent(activity, StoreDetailActivity::class.java)
-                    intent.putExtra(StoreDetailActivity.STORE_ITEM, storeResponseItem)
+
+                    val intent = Intent(activity, StoreDetailActivity2::class.java)
+                    intent.putExtra(StoreDetailActivity2.STORE_ITEM, storeItem)
                     startActivity(intent)
                 }
             }
@@ -160,6 +152,7 @@ class HomeFragment : Fragment() {
                     Log.d("FetchStore", "Store")
                     if (storeItems != null) {
                         storeadapter.submitList(storeItems)
+                        latestStores=storeItems
                     }
                 } else {
                     Log.e("NO,,", "ee")
@@ -185,6 +178,7 @@ class HomeFragment : Fragment() {
                     Log.d("FetchStore11", "Store")
                     if (storeItems != null) {
                         storeadapter.submitList(storeItems)
+                        latestStores=storeItems
                     }
                 } else {
                     Log.e("NO,,", "ee")

@@ -37,9 +37,6 @@ class BorderTransformation(private val borderWidth: Float, private val borderCol
         val radius = srcBitmap.width / 2f
         val center = radius + borderWidth
 
-        // Adjust this value to change the border radius
-        val borderRadiusAdjustment = 1f // Reduce the radius of the border
-
         canvas.drawCircle(center, center, radius, paint)
 
         paint.shader = null
@@ -48,8 +45,7 @@ class BorderTransformation(private val borderWidth: Float, private val borderCol
         paint.strokeWidth = borderWidth
 
         // Adjust the radius to ensure the border fits perfectly around the image
-        val borderRadius = radius * borderRadiusAdjustment + borderWidth / 2
-        canvas.drawCircle(center, center, borderRadius, paint)
+        canvas.drawCircle(center, center, radius + borderWidth / 2, paint)
 
         return dstBitmap
     }

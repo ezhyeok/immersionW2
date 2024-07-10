@@ -3,39 +3,34 @@ package com.example.tab3
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Color
-import android.graphics.PorterDuff
 import android.net.Uri
 import com.naver.maps.map.NaverMap
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 
-import com.bumptech.glide.Glide
-import com.example.tab3.databinding.ActivityStoreDetailBinding
-import java.text.DecimalFormat
 import android.util.Log
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.tab3.MapActivity.Companion
-import com.example.tab3.MapViewFragment.Companion.currentPosition
+import com.example.tab3.MapViewFragment2.Companion.currentPosition
 import com.example.tab3.databinding.ActivityStoreRecyclerBinding
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.naver.maps.geometry.LatLng
 import com.naver.maps.geometry.LatLngBounds
+import java.time.format.DateTimeFormatter
+import java.time.ZoneId
+import java.time.ZonedDateTime
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 import com.naver.maps.map.CameraUpdate
-import com.naver.maps.map.CameraUpdateParams
 import com.naver.maps.map.MapFragment
 import com.naver.maps.map.OnMapReadyCallback
-import com.naver.maps.map.overlay.LocationOverlay
 import com.naver.maps.map.overlay.Marker
 import com.naver.maps.map.overlay.OverlayImage
 import com.naver.maps.map.util.FusedLocationSource
@@ -79,39 +74,10 @@ class StoreDetailActivity : AppCompatActivity(), OnMapReadyCallback {
         val storeAdapter = StoreAdapter( mutableListOf())
         binding.recyclerView.adapter = storeAdapter
 
-        CoroutineScope(Dispatchers.IO).launch {
-            val db = AppDatabase.getInstance(this@StoreDetailActivity)
-            val allItems = db.diaryDao().getAll()
-            Log.d("storeItemInfo", "$allItems")
-            Log.d("storeItemInfoif", "${storeItem.id}")
-
-            items = if (storeItem.id != null && allItems.isNotEmpty()) {
-                Log.d("storeItemInfoisnotnull", "${storeItem.id}")
-                Log.d("storeItemInfoisnotnull", "${allItems[0].id}")
-                Log.d("storeItemInfoisnotnull", "${allItems.filter { it.id == storeItem.id }}")
-                allItems.filter { it.id == storeItem.id }
-
-            } else {
-                Log.d("storeItemInfoisnull", "${storeItem}")
-
-                allItems
-            }
-            withContext(Dispatchers.Main) {
-                if (items.isNotEmpty()) {
-                    storeAdapter.items.clear()
-                    storeAdapter.items.addAll(items)
-                    storeAdapter.notifyDataSetChanged()
-                } else {
-                    Log.d("storeItemInfo", "No items found for storeItem: ${storeItem.id}")
-                }
-
-            }
-        }
         Log.d("storeItemInfoitems", "${items}")
 
         binding.storeName.text = storeItem.place_name
         binding.storeType.text = storeItem.category_name
-
         // 장소 위치 정보를 기반으로 GoogleMap Intent
         binding.storeAddress.text = storeItem.address_name
         binding.storeLocationCard.setOnClickListener {
@@ -220,5 +186,11 @@ class StoreDetailActivity : AppCompatActivity(), OnMapReadyCallback {
     companion object {
         const val STORE_ITEM = "STORE_ITEM"
         const val LOCATION_PERMISSION_REQUEST_CODE = 5000
+    }
+    fun formatDate(isoDate: String): String {
+        val formatter = DateTimeFormatter.ofPattern("yyyy.MM.dd")
+        val zonedDateTime = ZonedDateTime.parse(isoDate).withZoneSameInstant(ZoneId.systemDefault())
+        val localDateTime = zonedDateTime.toLocalDateTime()
+        return localDateTime.format(formatter)
     }
 }

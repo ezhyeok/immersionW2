@@ -23,5 +23,4 @@ data class StoreResponseItem(
     override fun getTedLatLng(): TedLatLng {
         return TedLatLng(y.toDouble(), x.toDouble())
     }
-
 }

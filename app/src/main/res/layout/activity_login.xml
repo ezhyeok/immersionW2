@@ -24,7 +24,7 @@
             android:id="@+id/SplashScreenImage"
             android:layout_width="107dp"
             android:layout_height="61dp"
-            android:src="@drawable/splash_img" />
+            android:src="@drawable/potato" />
 
         <ImageView
             android:id="@+id/AppNameImage"

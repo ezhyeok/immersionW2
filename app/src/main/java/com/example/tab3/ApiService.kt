@@ -99,12 +99,18 @@ interface ApiService {
         @Query("reviewId") reviewId: String,
         @Query("uniqueId") uniqueId: String
     ): Call<ReviewDetail>
+    @GET("/getAllReview")
+    fun getAllReview(
+        @Query("restaurantId") restaurantId: String
+    ): Call<List<ReviewRecycle>>
+
 
     @POST("/toggleLike")
     fun toggleLike(
         @Query("reviewId") reviewId: String,
         @Query("uniqueId") uniqueId: String
     ): Call<String>
+
 
 }
 

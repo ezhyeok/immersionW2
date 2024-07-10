@@ -28,7 +28,6 @@ import com.jakewharton.rxbinding4.widget.textChanges
 import com.example.tab3.databinding.ActivityMapBinding
 import com.example.tab3.viewmodel.MapViewModel
 import com.example.tab3.MapViewFragment.Companion.STORE_ITEM
-import com.example.tab3.MapViewFragment.Companion.currentPosition
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.rxjava3.kotlin.subscribeBy

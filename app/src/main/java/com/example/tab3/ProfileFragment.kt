@@ -52,8 +52,14 @@ class ProfileFragment : Fragment() {
         val today = CalendarDay.today()
         _binding = ProfileInfoBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        if(ProfileData.uniqueId==ClientData.uniqueId)
-            binding.followingButton.visibility=View.INVISIBLE
+        if(ProfileData.uniqueId==ClientData.uniqueId) {
+            binding.followingButton.visibility = View.INVISIBLE
+            binding.addReviewButton.visibility=View.VISIBLE
+        }
+        if(ProfileData.uniqueId!=ClientData.uniqueId) {
+            binding.addReviewButton.visibility=View.GONE
+        }
+
         val call3 = apiService.getFollowNum(ProfileData.uniqueId!!)
         call3.enqueue(object : Callback<FollowNum> {
             override fun onResponse(call: Call<FollowNum>, response: Response<FollowNum>) {
@@ -187,7 +193,8 @@ class ProfileFragment : Fragment() {
                     if (response.isSuccessful) {
                         val reviewItems = response.body()
                         Log.d("FetchReviewUrls", "Review Items: $reviewItems")
-                        val followFragment = FollowFragment.newInstance(reviewItems ?: emptyList())
+                        val followFragment = FollowFragment.newInstance(reviewItems ?: emptyList(), 0)
+                        binding.followingButton.visibility=View.GONE
                         childFragmentManager.beginTransaction()
                             .replace(R.id.originLayout, followFragment)
                             .addToBackStack(null)
@@ -209,7 +216,8 @@ class ProfileFragment : Fragment() {
                     if (response.isSuccessful) {
                         val reviewItems = response.body()
                         Log.d("FetchReviewUrls", "Review Items: $reviewItems")
-                        val followFragment = FollowFragment.newInstance(reviewItems?: emptyList())
+                        val followFragment = FollowFragment.newInstance(reviewItems?: emptyList(), 1)
+                        binding.followingButton.visibility=View.GONE
                         childFragmentManager.beginTransaction()
                             .replace(R.id.originLayout, followFragment)
                             .addToBackStack(null)
@@ -226,6 +234,7 @@ class ProfileFragment : Fragment() {
         }
         binding.addReviewButton.setOnClickListener {
             val newDiary = NewDiary.newInstance(today.year, today.month, today.day)
+            binding.followingButton.visibility=View.GONE
             childFragmentManager.beginTransaction()
                 .replace(R.id.originLayout, newDiary)
                 .addToBackStack(null)
@@ -336,6 +345,7 @@ class ProfileFragment : Fragment() {
 
                     val newReviewFragment=reviewFragment.newInstance(reviewItem!!.reviewId, reviewItem!!.reviewImg)
                     //binding.originLayout.visibility=View.GONE
+                    binding.followingButton.visibility=View.GONE
                     childFragmentManager.beginTransaction()
                         .replace(R.id.originLayout, newReviewFragment)
                         .addToBackStack(null)
@@ -381,6 +391,7 @@ class ProfileFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        binding.followingButton.visibility=View.INVISIBLE
         _binding = null
     }
 }

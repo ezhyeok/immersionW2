@@ -42,14 +42,16 @@ class FollowFragment : Fragment() {
     lateinit var getImage: ActivityResultLauncher<String>
     lateinit var addProfile: ActivityResultLauncher<String>
     lateinit var dialogView: View
+    var qq=0
     var followers:  MutableList<ProfileItem> = mutableListOf()
 
     companion object {
         private const val PERMISSION_REQUEST_CODE = 1001
         private const val REQUEST_READ_MEDIA_IMAGES = 1001
-        fun newInstance(follows:List<ProfileItem>): FollowFragment {
+        fun newInstance(follows:List<ProfileItem>, qq:Int): FollowFragment {
             val fragment = FollowFragment()
             fragment.followers.addAll(follows)
+            fragment.qq=qq
             return fragment
         }
     }
@@ -59,12 +61,6 @@ class FollowFragment : Fragment() {
         super.onResume()
         // 프래그먼트가 화면에 다시 나타날 때마다 권한 요청을 수행
 
-        if (binding.switchSync.isChecked){
-            requestPermissions()
-        }
-
-
-        binding.searchCont.setQuery("", false)
     }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -74,16 +70,6 @@ class FollowFragment : Fragment() {
         val root: View = binding.root
 
         // Initialize RecyclerView
-        val switchSync = binding.switchSync
-        switchSync.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                // 동기화 ON
-                requestPermissions()
-            } else {
-                // 동기화 OFF
-                // 필요한 동작 추가
-            }
-        }
 
         adapter = FollowAdapter(followers)
         binding.recyclerV.layoutManager = LinearLayoutManager(requireContext())
@@ -129,6 +115,39 @@ class FollowFragment : Fragment() {
                     .commit()
 
             }
+        }
+        adapter.deleteClick= object : FollowAdapter.DeleteClick{
+            override fun onDeleteClick(view: View, position: Int) {
+                val apiService = RetrofitClient.apiService
+                val call1 = if (qq==1) apiService.delFollow(ClientData.uniqueId!!,followers[position].uniqueId!!)
+                            else apiService.delFollow(followers[position].uniqueId!!, ClientData.uniqueId!!)
+
+                call1.enqueue(object : Callback<ResponseMessage> {
+                    override fun onResponse(call: Call<ResponseMessage>, response: Response<ResponseMessage>) {
+                        if (response.isSuccessful) {
+                            // 성공적인 응답 처리
+                            /*
+                            추가 코드 필요한부분
+                            followers[position]을 제외한 부분을 다시 adapter에 표시하고 싶음
+                             */
+                            followers.removeAt(position)  // 리스트에서 아이템 삭제
+                            adapter.notifyItemRemoved(position)
+                            Log.d("MainActivity", "Success: ${response.body()?.message}")
+                        } else {
+                            // 실패한 응답 처리
+                            Log.e("MainActivity", "Error: ${response.errorBody()?.string()}")
+                        }
+                    }
+
+                    override fun onFailure(call: Call<ResponseMessage>, t: Throwable) {
+                        // 네트워크 실패 처리
+                        Log.e("MainActivity", "Failure: ${t.message}")
+                    }
+                })
+            }
+        }
+        binding.buttonAddContact.setOnClickListener{
+
         }
 
 

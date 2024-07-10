@@ -18,6 +18,7 @@ import android.util.Log
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.load.MultiTransformation
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 
@@ -26,8 +27,11 @@ import com.example.tab3.StoreListAdapter.Companion.LIMIT
 
 import com.example.tab3.databinding.StoreRvBinding
 import com.example.tab3.databinding.StoreListItemBinding
+import java.time.ZoneId
+import java.time.ZonedDateTime
+import java.time.format.DateTimeFormatter
 
-class StoreAdapter(val items: MutableList<Diary>) : RecyclerView.Adapter<StoreAdapter.ViewHolder>(){
+class StoreAdapter(val items: MutableList<ReviewRecycle>) : RecyclerView.Adapter<StoreAdapter.ViewHolder>(){
 
     companion object {
         private const val VIEW_TYPE_DEFAULT = 0
@@ -45,19 +49,24 @@ class StoreAdapter(val items: MutableList<Diary>) : RecyclerView.Adapter<StoreAd
         private val name = binding.name
         private val comment=binding.comment
         private val date=binding.date
-        private val favorite = binding.favorite
-        fun bind(item: Diary) {
+        private val rating=binding.rating
+        fun bind(item: ReviewRecycle) {
             //profile.setImageResource(item.profile)
             val transformation = MultiTransformation(
                 CenterCrop(),
                 RoundedCorners(10)
             )
             val resourceId = R.drawable.ic_chinese_food
-            if(item.diaryImg!=null){
-                //profile.setImageResource(R.drawable.star_filled)
+            if(item.reviewImg!=null){
+
                 Glide.with(binding.root)
-                    .load(item.diaryImg)
-                    .apply(RequestOptions().transform(MultiTransformation(CenterCrop(), CircleCrop())))
+                    .load(item.reviewImg)
+                    .apply(
+                        RequestOptions()
+                            .transform(MultiTransformation(CenterCrop(), CircleCrop()))
+                            .skipMemoryCache(true)
+                            .diskCacheStrategy(DiskCacheStrategy.NONE)
+                    )
                     .into(profile)
                 //profile.setImageURI(Uri.parse(item.image))
             }else{
@@ -67,8 +76,11 @@ class StoreAdapter(val items: MutableList<Diary>) : RecyclerView.Adapter<StoreAd
                     .into(profile)
             }
             //name.text = item.name
-            date.text = "${item.year}.${item.month}.${item.date}"
-            comment.text=item.diaryContent
+            //date.text = "${item.year}.${item.month}.${item.date}"
+            comment.text=item.reviewContent
+            date.text=formatDate(item.createdAt)
+            name.text=item.nickname
+            rating.text=item.rating+"/5"
         }
     }
 
@@ -114,7 +126,11 @@ class StoreAdapter(val items: MutableList<Diary>) : RecyclerView.Adapter<StoreAd
         }
 
     }
-
-
+    fun formatDate(isoDate: String): String {
+        val formatter = DateTimeFormatter.ofPattern("yyyy.MM.dd")
+        val zonedDateTime = ZonedDateTime.parse(isoDate).withZoneSameInstant(ZoneId.systemDefault())
+        val localDateTime = zonedDateTime.toLocalDateTime()
+        return localDateTime.format(formatter)
+    }
 
 }

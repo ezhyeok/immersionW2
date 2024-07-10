@@ -222,12 +222,6 @@ class DashboardFragment : Fragment(){
 //    }
 
 
-    private fun toFrameActivity() {
-        val images = imageAdapter.currentList.filterIsInstance<ImageItems.Image>().map { it.uri.toString() }.toTypedArray()
-        val intent = Intent(requireContext(), FrameActivity::class.java)
-            .putExtra("images", images)
-        startActivity(intent)
-    }
 
     override fun onDestroyView() {
         super.onDestroyView()
