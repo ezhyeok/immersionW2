@@ -113,7 +113,7 @@ class SplashActivity : AppCompatActivity() {
                         }
                     }
                     noLoginButton.setOnClickListener{
-                        kakaoId="guest"
+                       // kakaoId="guest"
 
                         showAddContactDialog("guest")
                     }
@@ -401,6 +401,9 @@ class SplashActivity : AppCompatActivity() {
                     uploadImageToServer(latestUri, xx)
                 else if (xx != null)
                     uploadDefaultImageToServer(latestSelect, xx)
+                if(name=="guest"){
+                    kakaoId=editTextName.text.toString()
+                }
                 val apiService = RetrofitClient.apiService
                 val request = mapOf("kakaoId" to (kakaoId?:""), "deviceId" to (deviceId?:""), "uniqueId" to editTextNumber.text.toString(), "nickname" to editTextName.text.toString(), "imageUrl" to "http://34.125.165.162:3000/uploads/kakaoprofile/${kakaoId}.jpg")
                 val call=apiService.getpermission(request)

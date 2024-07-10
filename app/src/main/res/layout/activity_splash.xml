@@ -24,23 +24,23 @@
 
         <pl.droidsonroids.gif.GifImageView
             android:layout_width="410dp"
-            android:layout_height="130dp"
+            android:layout_height="400dp"
             app:layout_constraintBottom_toTopOf="@id/AppNameImage"
             android:layout_centerVertical="true"
             android:adjustViewBounds="false"
-            android:src="@drawable/spoon_gif"/>
+            android:src="@drawable/potato"/>
     <!-- <ImageView
         android:id="@+id/SplashScreenImage"
         android:layout_width="180dp"
         android:layout_height="90dp"
         android:src="@drawable/splash_img" />-->
 
-        <ImageView
-            android:id="@+id/AppNameImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:src="@drawable/app_name_img"/>
+<!--        <ImageView-->
+<!--            android:id="@+id/AppNameImage"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:src="@drawable/app_name_img"/>-->
 
     </LinearLayout>
     <ImageView
