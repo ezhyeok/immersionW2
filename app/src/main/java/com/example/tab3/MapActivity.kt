@@ -46,6 +46,10 @@ import com.naver.maps.map.OnMapReadyCallback
 import com.naver.maps.map.overlay.Marker
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+
+object locat{
+    var locationSource: FusedLocationSource?=null
+}
 class MapActivity : BaseActivity<ActivityMapBinding, MapViewModel>(R.layout.activity_map), OnMeterSetListener , OnMapReadyCallback{
 
     companion object {
@@ -94,7 +98,8 @@ class MapActivity : BaseActivity<ActivityMapBinding, MapViewModel>(R.layout.acti
                 }
 
             mapFragment.getMapAsync(this)
-            locationSource = FusedLocationSource(this, LOCATION_PERMISSION_REQUEST_CODE)
+            locat.locationSource = FusedLocationSource(this, LOCATION_PERMISSION_REQUEST_CODE)
+            locationSource=locat.locationSource
             fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
             fusedLocationClient.lastLocation.addOnSuccessListener { location ->

@@ -57,7 +57,7 @@ class HomeFragment : Fragment() {
                 adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             }
         }
-
+        locat.locationSource.
         binding.citySpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
                 val selectedCity = parent.getItemAtPosition(position).toString()
