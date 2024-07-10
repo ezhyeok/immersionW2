@@ -112,6 +112,11 @@ class SplashActivity : AppCompatActivity() {
                             }
                         }
                     }
+                    noLoginButton.setOnClickListener{
+                        kakaoId="guest"
+
+                        showAddContactDialog("guest")
+                    }
 
                 } else if (tokenInfo != null) {
                     //
@@ -206,6 +211,10 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun showAddContactDialog(name: String?) {
+//        if(kakaoId=="guest")
+//        {
+//
+//        }
         dialogView =
             LayoutInflater.from(this@SplashActivity).inflate(R.layout.dialog_add_contact, null)
         val editTextName = dialogView.findViewById<EditText>(R.id.editTextName)
@@ -486,6 +495,7 @@ class SplashActivity : AppCompatActivity() {
 
     private fun uploadDefaultImageToServer(defaultId: Int, kakaoId: String) {
         val apiService = RetrofitClient.apiService
+
         val request = mapOf("kakaoId" to kakaoId, "defaultId" to defaultId.toString())
         val call = apiService.copyDefaultImage(request)
         call.enqueue(object : Callback<ImageCopyResponse> {
