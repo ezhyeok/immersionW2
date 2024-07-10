@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.MultiTransformation
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
@@ -195,9 +196,12 @@ class ImageViewHolder(
             RoundedCorners(100)
         )
 
+
+
         Glide.with(binding.root)
             .load(item.profileImg)
-            .apply(RequestOptions().centerCrop())
+            .apply(RequestOptions().centerCrop() .skipMemoryCache(true)
+                .diskCacheStrategy(DiskCacheStrategy.NONE))
             .apply(RequestOptions.bitmapTransform(transformation))
             .into(binding.previewImageView)
         binding.previewText.text = item.uniqueId
